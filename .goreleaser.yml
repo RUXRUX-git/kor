@@ -12,31 +12,6 @@ builds:
       - linux
     goarch:
       - amd64
-      - arm64
-
-  - id: darwin
-    binary: kor
-    main: ./main.go
-    env:
-      - CGO_ENABLED=0
-    ldflags:
-      - -X github.com/yonahd/kor/pkg/utils.Version={{.Version}}
-    goos:
-      - darwin
-    goarch:
-      - amd64
-      - arm64
-
-  - id: windows
-    binary: kor
-    main: ./main.go
-    goos:
-      - windows
-    goarch:
-      - amd64
-    ldflags:
-      - -buildmode=exe
-      - -X github.com/yonahd/kor/pkg/utils.Version={{.Version}}
 archives:
   - format: tar.gz
     name_template: >-
